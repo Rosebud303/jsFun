@@ -24,17 +24,20 @@ const kittyPrompts = {
     // Return an array of just the names of kitties who are orange e.g.
     // ['Tiger', 'Snickers']
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = kitties.filter(cat => cat.color === 'orange').map(cat => cat.name);
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // You first have to find the orange cats with filter then return the name only using map.
   },
 
   sortByAge() {
     // Sort the kitties by their age
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = kitties.sort((a, b) => {
+        return b.age - a.age
+    });
+
     return result;
 
     // Annotation:
@@ -55,7 +58,11 @@ const kittyPrompts = {
     // },
     // ...etc]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = kitties.map(bday => {
+        bday.age = bday.age + 2;
+            return bday
+    });
+
     return result;
   }
 };
@@ -87,7 +94,15 @@ const clubPrompts = {
     //   ...etc
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = clubs.reduce((acc, club) => {
+        club.members.forEach(member => {
+            if(!acc[member]) {
+                acc[member] = [];
+            }
+            acc[member].push(club.club)
+        });
+        return acc
+    }, {});
     return result;
 
     // Annotation:
@@ -123,7 +138,9 @@ const modPrompts = {
     //   { mod: 4, studentsPerInstructor: 8 }
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = mods.map(mod => {
+        return { mod: mod.mod, studentsPerInstructor: mod.students / mod.instructors}
+    });
     return result;
 
     // Annotation:
@@ -157,8 +174,14 @@ const cakePrompts = {
     //    { flavor: 'yellow', inStock: 14 },
     //    ..etc
     // ]
+    // define the array prototype that we want to use.
+    // we want to use map.
+    // as we iterate through our array we want to select the flavor and availability of each object
+    // we want to return those key value pairs into the array of objects.
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = cakes.map(function(cake){
+        return {flavor: cake.cakeFlavor, inStock: cake.inStock }
+    });
     return result;
 
     // Annotation:
@@ -186,7 +209,9 @@ const cakePrompts = {
     // ..etc
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = cakes.filter(cake => {
+        return cake.inStock > 0;
+    });
     return result;
 
     // Annotation:
@@ -197,7 +222,9 @@ const cakePrompts = {
     // Return the total amount of cakes in stock e.g.
     // 59
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = cakes.reduce((acc, cake) => {
+        return acc += cake.inStock;
+    }, 0);
     return result;
 
     // Annotation:
@@ -209,7 +236,14 @@ const cakePrompts = {
     // every cake in the dataset e.g.
     // ['dutch process cocoa', 'toasted sugar', 'smoked sea salt', 'berries', ..etc]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = cakes.reduce((acc, cake) => {
+        cake.toppings.forEach(topping => {
+            if(!acc.includes(topping)) {
+                acc.push(topping);
+            }
+        });
+        return acc;
+    }, []);
     return result;
 
     // Annotation:
@@ -227,7 +261,15 @@ const cakePrompts = {
     //    ...etc
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = cakes.reduce((acc, cake) => {
+        cake.forEach(topping => {
+            if(!acc[topping]) {
+                acc[topping] = 0;
+            }
+            acc[topping]++
+        });
+        return acc
+    }, {});
     return result;
 
     // Annotation:

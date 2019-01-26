@@ -199,6 +199,7 @@ const context = {
 
     // Annotation: 
     // The callback is being ran on the click of the object of el
+},
 
   exerciseK() {
     const el = $('#btn');

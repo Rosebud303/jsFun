@@ -11,7 +11,7 @@ const scope = {
       }
 
       function beautifyPerson() {
-        // Log A: personB
+        // Log A: Ben
         
         if (personB.includes('B')) {
           personB = person;
@@ -29,7 +29,12 @@ const scope = {
 
     // Log D: personC
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+    { 'A': 'Ben' },
+    { 'B': 'CardiB' },
+    { 'C': 'CardiB'},
+    { 'D': 'Paul'}
+  ];
     return result;
 
     // Annotation:
@@ -80,22 +85,22 @@ const scope = {
         let greeting = 'Howdy';
       }
 
-      // Log A: greeting
+      // Log A: Yo
 
       function newPhrase() {
         greeting = 'Hey';
 
-        // Log B: greeting
+        // Log B: Hey
       }
 
       newPhrase();
 
-      // Log C: greeting
+      // Log C: Hey
     }
 
     greetingFunction();
 
-    // Log D: greeting
+    // Log D: Hello
 
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
@@ -114,22 +119,22 @@ const scope = {
         let greeting = 'hello';
       }
 
-      // Log A: greeting
+      // Log A: hi
 
       const newGreeting = ()  => {
         greeting = 'welcome';
 
-        // Log B: greeting
+        // Log B: welcome
       };
 
       newGreeting();
 
-      // Log C: greeting
+      // Log C: welcome
     };
 
     greetingGenerator();
 
-    // Log D: greeting
+    // Log D: howdy
 
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
@@ -151,17 +156,17 @@ const scope = {
           let name = 'Brittany';
         }
 
-        // Log A: name
+        // Log A: Nathaniel
       }
 
-      // Log B: name
+      // Log B: Nathaniel
     }
 
-    // Log C: name
+    // Log C: Brittany
 
     sayName();
 
-    // Log D: name
+    // Log D: Brittany
 
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
@@ -174,24 +179,24 @@ const scope = {
     var dog = 'Spot';
 
     function petDog() {
-      // Log A: dog
+      // Log A: Spot
 
       if (dog === 'Spot') {
         let dog = 'Fluffy';
       }
 
       function rollOver() {
-        // Log B: dog
+        // Log B: Spot
 
         dog = 'Biscuit';
 
-        // Log C: dog
+        // Log C: Biscuit
 
       }
 
       rollOver();
 
-      // Log D: dog
+      // Log D: Biscuit
     }
 
     petDog();
